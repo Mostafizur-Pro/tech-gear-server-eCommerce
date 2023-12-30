@@ -12,4 +12,16 @@ router.post(
   userController.createUser,
 );
 
+// get all user
+router.get('/', userController.getAllUser);
+
+// get single user
+router.get('/:id', userController.getSingleUser);
+
+// update user
+router.patch('/:id', userController.updateUser);
+
+// delete user
+router.delete('/:id', userController.deleteUser);
+
 export const userRouter = router;
