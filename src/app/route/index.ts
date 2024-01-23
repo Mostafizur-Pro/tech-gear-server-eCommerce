@@ -3,7 +3,7 @@ import { userRouter } from '../modules/user/user.route';
 import { authRoute } from '../modules/auth/auth.route';
 import {  blogRouter } from '../modules/blog/blog.router';
 import {  productRouter } from '../modules/product/product.router';
-
+import { orderRouter } from '../modules/order/order.router';
 
 const router = express.Router();
 
@@ -23,7 +23,12 @@ const moduleRoutes = [
   {
     path: '/product',
     route: productRouter,
-  },
+  } 
+  ,
+  {
+    path: '/order',
+    route: orderRouter,
+  } 
 ];
 
 moduleRoutes.map(route => router.use(route.path, route.route));
