@@ -3,7 +3,7 @@ import cors from 'cors';
 import httpStatus from 'http-status';
 const app: Application = express();
 import cookieParser from 'cookie-parser';
- 
+ import router from './app/router/indexx';
 
 app.use(cors());
 
@@ -15,7 +15,7 @@ app.use(express.urlencoded({ extended: true }));
 // use global error handler
 // app.use(globalErrorHandler);
 
- 
+app.use('/api/v1', router);
 
 // if not found any route or api
 app.use((req: Request, res: Response, next: NextFunction) => {
